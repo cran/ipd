@@ -1,8 +1,9 @@
-8db892017cedaa0c81a8269b5f0e3e75 *DESCRIPTION
+a64a2a2098c29d3bb781a89ee878861e *DESCRIPTION
 d717846f7df44a48ba9166d0c2741fa1 *LICENSE
 6587de24a4c6813ea703ab1c156bdfcf *NAMESPACE
+a538926c657531a9ee097765ae963471 *NEWS.md
 a0b6ed3122bf38e191f1a744652cd43f *R/helpers.R
-2b55e7ee48f9d7ce3f7baf18f0d8c639 *R/ipd.R
+fa4c535af5aea23db68cc705c6933c32 *R/ipd.R
 040a245c2b6c5a205e7ef8ebd9b39ea6 *R/methods.R
 09eb0afe5d13bd644ef8a6e02c096eae *R/postpi_analytic_ols.R
 b876b3a21ddb76f56441c9f527e28d65 *R/postpi_boot_logistic.R
@@ -26,7 +27,7 @@ bc638c720d1f72ba6d0ab75fe9203d2a *R/simdat.R
 330496a36150dfd9f61e77a2581a51ee *inst/IPD_POP-Inf_test.Rmd
 1e278b36db2f402dfba77e755445f266 *inst/IPD_POP-Inf_test.html
 65474691fe6b5f5a42e9604fb5ffcb1a *inst/WORDLIST
-6098504f6c37a11be39284d81902844c *inst/doc/ipd.R
+0498ea457d4a2ba48c48dbaa483bacdd *inst/doc/ipd.R
 8c383db7a8bec167f604e1e9451b418e *inst/doc/ipd.Rmd
 4d386ae755a69ba9d74a491f7893b715 *inst/doc/ipd.html
 84e079edafedbf074123bd876056b6c3 *inst/fig.png
@@ -43,7 +44,7 @@ decddf3db193512606e8af51f9c092d6 *man/compute_cdf_diff.Rd
 aea629ef6b58d403a28d8395b52d07e2 *man/figures/ipd.png
 59a1c45474c09fd65f8825ee984795c0 *man/figures/ipd_overview.png
 bfcc1e92269368e71c38427a46c4bc68 *man/glance.ipd.Rd
-e678fd386244e1404553e724eecce076 *man/ipd.Rd
+33cafe808b10ef12f58e536bf4be7627 *man/ipd.Rd
 095757c09d53a0bbcacd6cf9a3f211c3 *man/link_Hessian.Rd
 1a6b1a0b9bc050cd0e9fcfe36e3399fb *man/link_grad.Rd
 1fd2539abe33882f3bb98bc156f0c8c3 *man/log1pexp.Rd

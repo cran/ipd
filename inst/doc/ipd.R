@@ -11,13 +11,13 @@ knitr::opts_chunk$set(
 default_options <- options()
 
 ## ----eval = F-----------------------------------------------------------------
-#  #-- Install devtools if it is not already installed
-#  
-#  install.packages("devtools")
-#  
-#  #-- Install the ipd package from GitHub
-#  
-#  devtools::install_github("ipd-tools/ipd")
+# #-- Install devtools if it is not already installed
+# 
+# install.packages("devtools")
+# 
+# #-- Install the ipd package from GitHub
+# 
+# devtools::install_github("ipd-tools/ipd")
 
 ## ----setup--------------------------------------------------------------------
 #-- Load ipd Package
@@ -367,5 +367,5 @@ head(augmented_df)
 options(default_options)
 
 ## ----help, eval=F-------------------------------------------------------------
-#  ?ipd
+# ?ipd
 

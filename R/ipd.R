@@ -52,6 +52,14 @@
 #' @param alternative A string specifying the alternative hypothesis. Must be
 #' one of \code{"two-sided"}, \code{"less"}, or \code{"greater"}.
 #'
+#' @param n_t (integer, optional) Size of the dataset used to train the
+#' prediction function (necessary for the \code{"postpi"} methods if \code{n_t} <
+#' \code{nrow(X_l)}. Defaults to \code{Inf}.
+#'
+#' @param na_action (string, optional) How missing covariate data should be
+#' handled. Currently \code{"na.fail"} and \code{"na.omit"} are accommodated.
+#' Defaults to \code{"na.fail"}.
+#'
 #' @param ... Additional arguments to be passed to the fitting function. See
 #' the \code{Details} section for more information.
 #'
@@ -212,11 +220,20 @@
 
 ipd <- function(formula, method, model, data,
 
-  label = NULL, unlabeled_data = NULL, seed = NULL,
+  label = NULL, unlabeled_data = NULL, seed = NULL, intercept = TRUE,
 
-  intercept = TRUE, alpha = 0.05, alternative = "two-sided", ...) {
+  alpha = 0.05, alternative = "two-sided", n_t = Inf, na_action = "na.fail",
+
+  ...) {
 
   #--- CHECKS & ASSERTIONS -----------------------------------------------------
+
+  #-- CHECK ARGUMENTS
+
+  if(na_action != "na.fail" & na_action != "na.omit") {
+
+    stop("na_action should be either 'na.fail' or 'na.omit'")
+  }
 
   #-- CHECK FOR DATA
 
@@ -398,13 +415,39 @@ ipd <- function(formula, method, model, data,
 
   #-- LABELED DATA
 
+  #- CHECK FOR MISSING COVARIATE DATA
+
+  missing_covs_l <- apply(data_l[ , all.vars(formula)[-(1:2)], drop = FALSE], 2,
+
+    function(x) any(is.na(x)))
+
+  if (any(missing_covs_l)) {
+
+    missing_vars_l <- names(missing_covs_l[missing_covs_l])
+
+    stop(paste0(
+
+      "Missing values detected in the following labeled covariate data: ",
+
+      paste(missing_vars_l, collapse = ", "),
+
+      ". Please ensure there are no missing values in these covariates."
+    ))
+  }
+
   if (intercept) {
 
-    X_l <- model.matrix(formula, data = data_l)
+    X_l <- model.matrix(formula,
+
+      model.frame(formula, data = data_l, na.action = na_action))
 
   } else {
 
-    X_l <- model.matrix(formula - 1, data = data_l)
+    X_l <- model.matrix(update(formula, . ~ . - 1),
+
+      model.frame(update(formula, . ~ . - 1),
+
+        data = data_l, na.action = na_action))
   }
 
   Y_l <- data_l[ , all.vars(formula)[1]] |> matrix(ncol = 1)
@@ -413,13 +456,44 @@ ipd <- function(formula, method, model, data,
 
   #-- UNLABELED DATA
 
+  formula_u <- as.formula(paste(all.vars(formula)[2], "~",
+
+    paste(all.vars(formula)[-c(1, 2)], collapse = " + ")))
+
+
+  #- CHECK FOR MISSING COVARIATE DATA
+
+  missing_covs_u <- apply(data_u[ , all.vars(formula_u)[-1], drop = FALSE], 2,
+
+    function(x) any(is.na(x)))
+
+  if (any(missing_covs_u)) {
+
+    missing_vars_u <- names(missing_covs_u[missing_covs_u])
+
+    stop(paste0(
+
+      "Missing values detected in the following unlabeled covariate data: ",
+
+      paste(missing_vars_u, collapse = ", "),
+
+      ". Please ensure there are no missing values in these covariates."
+    ))
+  }
+
   if (intercept) {
 
-    X_u <- model.matrix(formula, data = data_u)
+    X_u <- model.matrix(formula_u,
+
+      model.frame(formula_u, data = data_u, na.action = na_action))
 
   } else {
 
-    X_u <- model.matrix(formula - 1, data = data_u)
+    X_u <- model.matrix(update(formula_u, . ~ . - 1),
+
+      model.frame(update(formula_u, . ~ . - 1),
+
+        data = data_u, na.action = na_action))
   }
 
   f_u <- data_u[ , all.vars(formula)[2]] |> matrix(ncol = 1)
@@ -428,7 +502,14 @@ ipd <- function(formula, method, model, data,
 
   func <- get(paste(method, model, sep = "_"))
 
-  fit <- func(X_l, Y_l, f_l, X_u, f_u, ...)
+  if(grepl("postpi", method) && model == "ols") {
+
+    fit <- func(X_l, Y_l, f_l, X_u, f_u, n_t = n_t, ...)
+
+  } else {
+
+    fit <- func(X_l, Y_l, f_l, X_u, f_u, ...)
+  }
 
   names(fit$est) <- colnames(X_u)
 
