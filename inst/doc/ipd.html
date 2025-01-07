@@ -477,26 +477,26 @@ subsets:</p>
 <span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a></span>
 <span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="fu">options</span>(<span class="at">digits=</span><span class="dv">2</span>)</span>
 <span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="fu">head</span>(dat_ols[dat_ols<span class="sc">$</span>set <span class="sc">==</span> <span class="st">&quot;training&quot;</span>,])</span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt;       X1    X2    X3     X4     Y  f      set</span></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt; 1 -0.560 -0.56  0.82 -0.356 -0.15 NA training</span></span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">#&gt; 2 -0.230  0.13 -1.54  0.040 -4.49 NA training</span></span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="co">#&gt; 3  1.559  1.82 -0.59  1.152 -1.08 NA training</span></span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co">#&gt; 4  0.071  0.16 -0.18  1.485 -3.67 NA training</span></span>
-<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="co">#&gt; 5  0.129 -0.72 -0.71  0.634  2.19 NA training</span></span>
-<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="co">#&gt; 6  1.715  0.58 -0.54 -0.037 -1.42 NA training</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="fu">head</span>(dat_ols[dat_ols<span class="sc">$</span>set_label <span class="sc">==</span> <span class="st">&quot;training&quot;</span>,])</span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt;       X1    X2    X3     X4     Y  f set_label</span></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt; 1 -0.560 -0.56  0.82 -0.356 -0.15 NA  training</span></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">#&gt; 2 -0.230  0.13 -1.54  0.040 -4.49 NA  training</span></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="co">#&gt; 3  1.559  1.82 -0.59  1.152 -1.08 NA  training</span></span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co">#&gt; 4  0.071  0.16 -0.18  1.485 -3.67 NA  training</span></span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="co">#&gt; 5  0.129 -0.72 -0.71  0.634  2.19 NA  training</span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a><span class="co">#&gt; 6  1.715  0.58 -0.54 -0.037 -1.42 NA  training</span></span>
 <span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a></span>
-<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a><span class="fu">head</span>(dat_ols[dat_ols<span class="sc">$</span>set <span class="sc">==</span> <span class="st">&quot;labeled&quot;</span>,])</span>
-<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a><span class="co">#&gt;          X1      X2    X3    X4     Y     f     set</span></span>
-<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a><span class="co">#&gt; 10001  2.37 -1.8984  0.20 -0.17  1.40  3.24 labeled</span></span>
-<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a><span class="co">#&gt; 10002 -0.17  1.7428  0.26 -2.05  3.56  1.03 labeled</span></span>
-<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a><span class="co">#&gt; 10003  0.93 -1.0947  0.76  1.25 -3.66  2.37 labeled</span></span>
-<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a><span class="co">#&gt; 10004 -0.57  0.1757  0.32  0.65 -0.56  0.58 labeled</span></span>
-<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a><span class="co">#&gt; 10005  0.23  2.0620 -1.35  1.46 -0.82 -0.15 labeled</span></span>
-<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a><span class="co">#&gt; 10006  1.13 -0.0028  0.23 -0.24  7.30  2.16 labeled</span></span>
+<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a><span class="fu">head</span>(dat_ols[dat_ols<span class="sc">$</span>set_label <span class="sc">==</span> <span class="st">&quot;labeled&quot;</span>,])</span>
+<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a><span class="co">#&gt;          X1      X2    X3    X4     Y     f set_label</span></span>
+<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a><span class="co">#&gt; 10001  2.37 -1.8984  0.20 -0.17  1.40  3.24   labeled</span></span>
+<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a><span class="co">#&gt; 10002 -0.17  1.7428  0.26 -2.05  3.56  1.03   labeled</span></span>
+<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a><span class="co">#&gt; 10003  0.93 -1.0947  0.76  1.25 -3.66  2.37   labeled</span></span>
+<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a><span class="co">#&gt; 10004 -0.57  0.1757  0.32  0.65 -0.56  0.58   labeled</span></span>
+<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a><span class="co">#&gt; 10005  0.23  2.0620 -1.35  1.46 -0.82 -0.15   labeled</span></span>
+<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a><span class="co">#&gt; 10006  1.13 -0.0028  0.23 -0.24  7.30  2.16   labeled</span></span>
 <span id="cb3-30"><a href="#cb3-30" tabindex="-1"></a></span>
-<span id="cb3-31"><a href="#cb3-31" tabindex="-1"></a><span class="fu">head</span>(dat_ols[dat_ols<span class="sc">$</span>set <span class="sc">==</span> <span class="st">&quot;unlabeled&quot;</span>,])</span>
-<span id="cb3-32"><a href="#cb3-32" tabindex="-1"></a><span class="co">#&gt;          X1     X2    X3    X4    Y     f       set</span></span>
+<span id="cb3-31"><a href="#cb3-31" tabindex="-1"></a><span class="fu">head</span>(dat_ols[dat_ols<span class="sc">$</span>set_label <span class="sc">==</span> <span class="st">&quot;unlabeled&quot;</span>,])</span>
+<span id="cb3-32"><a href="#cb3-32" tabindex="-1"></a><span class="co">#&gt;          X1     X2    X3    X4    Y     f set_label</span></span>
 <span id="cb3-33"><a href="#cb3-33" tabindex="-1"></a><span class="co">#&gt; 10501  0.99 -3.280 -0.39  0.97  8.4  1.25 unlabeled</span></span>
 <span id="cb3-34"><a href="#cb3-34" tabindex="-1"></a><span class="co">#&gt; 10502 -0.66  0.142 -1.36 -0.22 -7.2 -1.08 unlabeled</span></span>
 <span id="cb3-35"><a href="#cb3-35" tabindex="-1"></a><span class="co">#&gt; 10503  0.58 -1.368 -1.73  0.15  5.6 -0.31 unlabeled</span></span>
@@ -530,26 +530,26 @@ predictors for logistic regression as follows:</p>
 <span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a></span>
 <span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co">#-- Print First 6 Rows of Training, Labeled, and Unlabeled Subsets</span></span>
 <span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="fu">head</span>(dat_logistic[dat_logistic<span class="sc">$</span>set <span class="sc">==</span> <span class="st">&quot;training&quot;</span>,])</span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt;       X1    X2    X3     X4 Y  f      set</span></span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; 1 -0.560 -0.56  0.82 -0.356 1 NA training</span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; 2 -0.230  0.13 -1.54  0.040 0 NA training</span></span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt; 3  1.559  1.82 -0.59  1.152 1 NA training</span></span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt; 4  0.071  0.16 -0.18  1.485 0 NA training</span></span>
-<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt; 5  0.129 -0.72 -0.71  0.634 0 NA training</span></span>
-<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="co">#&gt; 6  1.715  0.58 -0.54 -0.037 1 NA training</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="fu">head</span>(dat_logistic[dat_logistic<span class="sc">$</span>set_label <span class="sc">==</span> <span class="st">&quot;training&quot;</span>,])</span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co">#&gt;       X1    X2    X3     X4 Y  f set_label</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="co">#&gt; 1 -0.560 -0.56  0.82 -0.356 1 NA  training</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; 2 -0.230  0.13 -1.54  0.040 0 NA  training</span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt; 3  1.559  1.82 -0.59  1.152 1 NA  training</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt; 4  0.071  0.16 -0.18  1.485 0 NA  training</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt; 5  0.129 -0.72 -0.71  0.634 0 NA  training</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="co">#&gt; 6  1.715  0.58 -0.54 -0.037 1 NA  training</span></span>
 <span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a></span>
-<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="fu">head</span>(dat_logistic[dat_logistic<span class="sc">$</span>set <span class="sc">==</span> <span class="st">&quot;labeled&quot;</span>,])</span>
-<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co">#&gt;          X1      X2    X3    X4 Y f     set</span></span>
-<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="co">#&gt; 10001  2.37 -1.8984  0.20 -0.17 1 1 labeled</span></span>
-<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="co">#&gt; 10002 -0.17  1.7428  0.26 -2.05 1 1 labeled</span></span>
-<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a><span class="co">#&gt; 10003  0.93 -1.0947  0.76  1.25 1 1 labeled</span></span>
-<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="co">#&gt; 10004 -0.57  0.1757  0.32  0.65 1 0 labeled</span></span>
-<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a><span class="co">#&gt; 10005  0.23  2.0620 -1.35  1.46 1 1 labeled</span></span>
-<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a><span class="co">#&gt; 10006  1.13 -0.0028  0.23 -0.24 1 1 labeled</span></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="fu">head</span>(dat_logistic[dat_logistic<span class="sc">$</span>set_label <span class="sc">==</span> <span class="st">&quot;labeled&quot;</span>,])</span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co">#&gt;          X1      X2    X3    X4 Y f set_label</span></span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="co">#&gt; 10001  2.37 -1.8984  0.20 -0.17 1 1   labeled</span></span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="co">#&gt; 10002 -0.17  1.7428  0.26 -2.05 1 1   labeled</span></span>
+<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a><span class="co">#&gt; 10003  0.93 -1.0947  0.76  1.25 1 1   labeled</span></span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="co">#&gt; 10004 -0.57  0.1757  0.32  0.65 1 0   labeled</span></span>
+<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a><span class="co">#&gt; 10005  0.23  2.0620 -1.35  1.46 1 1   labeled</span></span>
+<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a><span class="co">#&gt; 10006  1.13 -0.0028  0.23 -0.24 1 1   labeled</span></span>
 <span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a></span>
-<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a><span class="fu">head</span>(dat_logistic[dat_logistic<span class="sc">$</span>set <span class="sc">==</span> <span class="st">&quot;unlabeled&quot;</span>,])</span>
-<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a><span class="co">#&gt;          X1     X2    X3    X4 Y f       set</span></span>
+<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a><span class="fu">head</span>(dat_logistic[dat_logistic<span class="sc">$</span>set_label <span class="sc">==</span> <span class="st">&quot;unlabeled&quot;</span>,])</span>
+<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a><span class="co">#&gt;          X1     X2    X3    X4 Y f set_label</span></span>
 <span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a><span class="co">#&gt; 10501  0.99 -3.280 -0.39  0.97 1 1 unlabeled</span></span>
 <span id="cb4-32"><a href="#cb4-32" tabindex="-1"></a><span class="co">#&gt; 10502 -0.66  0.142 -1.36 -0.22 0 0 unlabeled</span></span>
 <span id="cb4-33"><a href="#cb4-33" tabindex="-1"></a><span class="co">#&gt; 10503  0.58 -1.368 -1.73  0.15 1 1 unlabeled</span></span>
@@ -572,12 +572,12 @@ included in the <code>ipd</code> package.</p>
 <h4>0.1 ‘Naive’ Regression Using the Predicted Outcomes</h4>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co">#--- Fit the Naive Regression</span></span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="fu">lm</span>(f <span class="sc">~</span> X1, <span class="at">data =</span> dat_ols[dat_ols<span class="sc">$</span>set <span class="sc">==</span> <span class="st">&quot;unlabeled&quot;</span>,]) <span class="sc">|&gt;</span> </span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="fu">lm</span>(f <span class="sc">~</span> X1, <span class="at">data =</span> dat_ols[dat_ols<span class="sc">$</span>set_label <span class="sc">==</span> <span class="st">&quot;unlabeled&quot;</span>,]) <span class="sc">|&gt;</span> </span>
 <span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  </span>
 <span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  <span class="fu">summary</span>()</span>
 <span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co">#&gt; Call:</span></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co">#&gt; lm(formula = f ~ X1, data = dat_ols[dat_ols$set == &quot;unlabeled&quot;, </span></span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co">#&gt; lm(formula = f ~ X1, data = dat_ols[dat_ols$set_label == &quot;unlabeled&quot;, </span></span>
 <span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co">#&gt;     ])</span></span>
 <span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co">#&gt; Residuals:</span></span>
@@ -599,12 +599,12 @@ included in the <code>ipd</code> package.</p>
 <h4>0.2 ‘Classic’ Regression Using only the Labeled Data</h4>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co">#--- Fit the Classic Regression</span></span>
 <span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="fu">lm</span>(Y <span class="sc">~</span> X1, <span class="at">data =</span> dat_ols[dat_ols<span class="sc">$</span>set <span class="sc">==</span> <span class="st">&quot;labeled&quot;</span>,]) <span class="sc">|&gt;</span> </span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="fu">lm</span>(Y <span class="sc">~</span> X1, <span class="at">data =</span> dat_ols[dat_ols<span class="sc">$</span>set_label <span class="sc">==</span> <span class="st">&quot;labeled&quot;</span>,]) <span class="sc">|&gt;</span> </span>
 <span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>  </span>
 <span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>  <span class="fu">summary</span>()</span>
 <span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co">#&gt; Call:</span></span>
-<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="co">#&gt; lm(formula = Y ~ X1, data = dat_ols[dat_ols$set == &quot;labeled&quot;, </span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="co">#&gt; lm(formula = Y ~ X1, data = dat_ols[dat_ols$set_label == &quot;labeled&quot;, </span></span>
 <span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co">#&gt;     ])</span></span>
 <span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="co">#&gt; Residuals:</span></span>
@@ -636,7 +636,7 @@ using the provided wrapper function, <code>ipd()</code>:</p>
 <span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a></span>
 <span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>ipd<span class="sc">::</span><span class="fu">ipd</span>(formula, </span>
 <span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a>         </span>
-<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">&quot;postpi_boot&quot;</span>, <span class="at">model =</span> <span class="st">&quot;ols&quot;</span>, <span class="at">data =</span> dat_ols, <span class="at">label =</span> <span class="st">&quot;set&quot;</span>, </span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">&quot;postpi_boot&quot;</span>, <span class="at">model =</span> <span class="st">&quot;ols&quot;</span>, <span class="at">data =</span> dat_ols, <span class="at">label =</span> <span class="st">&quot;set_label&quot;</span>, </span>
 <span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a>  </span>
 <span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a>  <span class="at">nboot =</span> nboot) <span class="sc">|&gt;</span> </span>
 <span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a>  </span>
@@ -660,7 +660,7 @@ using the provided wrapper function, <code>ipd()</code>:</p>
 <span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>ipd<span class="sc">::</span><span class="fu">ipd</span>(formula, </span>
 <span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>         </span>
-<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">&quot;postpi_analytic&quot;</span>, <span class="at">model =</span> <span class="st">&quot;ols&quot;</span>, <span class="at">data =</span> dat_ols, <span class="at">label =</span> <span class="st">&quot;set&quot;</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">&quot;postpi_analytic&quot;</span>, <span class="at">model =</span> <span class="st">&quot;ols&quot;</span>, <span class="at">data =</span> dat_ols, <span class="at">label =</span> <span class="st">&quot;set_label&quot;</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>  </span>
 <span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>  <span class="fu">summary</span>()</span>
 <span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="co">#&gt; </span></span>
@@ -683,7 +683,7 @@ using the provided wrapper function, <code>ipd()</code>:</p>
 <span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>ipd<span class="sc">::</span><span class="fu">ipd</span>(formula, </span>
 <span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>         </span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">&quot;ppi&quot;</span>, <span class="at">model =</span> <span class="st">&quot;ols&quot;</span>, <span class="at">data =</span> dat_ols, <span class="at">label =</span> <span class="st">&quot;set&quot;</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">&quot;ppi&quot;</span>, <span class="at">model =</span> <span class="st">&quot;ols&quot;</span>, <span class="at">data =</span> dat_ols, <span class="at">label =</span> <span class="st">&quot;set_label&quot;</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>  </span>
 <span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>  <span class="fu">summary</span>()</span>
 <span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="co">#&gt; </span></span>
@@ -705,7 +705,7 @@ using the provided wrapper function, <code>ipd()</code>:</p>
 <span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>ipd<span class="sc">::</span><span class="fu">ipd</span>(formula, </span>
 <span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>         </span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">&quot;ppi_plusplus&quot;</span>, <span class="at">model =</span> <span class="st">&quot;ols&quot;</span>, <span class="at">data =</span> dat_ols, <span class="at">label =</span> <span class="st">&quot;set&quot;</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">&quot;ppi_plusplus&quot;</span>, <span class="at">model =</span> <span class="st">&quot;ols&quot;</span>, <span class="at">data =</span> dat_ols, <span class="at">label =</span> <span class="st">&quot;set_label&quot;</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>  </span>
 <span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>  <span class="fu">summary</span>()</span>
 <span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a><span class="co">#&gt; </span></span>
@@ -727,7 +727,7 @@ using the provided wrapper function, <code>ipd()</code>:</p>
 <span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>ipd<span class="sc">::</span><span class="fu">ipd</span>(formula, </span>
 <span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>         </span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">&quot;pspa&quot;</span>, <span class="at">model =</span> <span class="st">&quot;ols&quot;</span>, <span class="at">data =</span> dat_ols, <span class="at">label =</span> <span class="st">&quot;set&quot;</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">&quot;pspa&quot;</span>, <span class="at">model =</span> <span class="st">&quot;ols&quot;</span>, <span class="at">data =</span> dat_ols, <span class="at">label =</span> <span class="st">&quot;set_label&quot;</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>  </span>
 <span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>  <span class="fu">summary</span>()</span>
 <span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a><span class="co">#&gt; </span></span>
@@ -753,12 +753,12 @@ using the provided wrapper function, <code>ipd()</code>:</p>
 <span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="fu">glm</span>(f <span class="sc">~</span> X1, <span class="at">family =</span> binomial, </span>
 <span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>    </span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>  <span class="at">data =</span> dat_logistic[dat_logistic<span class="sc">$</span>set <span class="sc">==</span> <span class="st">&quot;unlabeled&quot;</span>,]) <span class="sc">|&gt;</span> </span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>  <span class="at">data =</span> dat_logistic[dat_logistic<span class="sc">$</span>set_label <span class="sc">==</span> <span class="st">&quot;unlabeled&quot;</span>,]) <span class="sc">|&gt;</span> </span>
 <span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>  </span>
 <span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a>  <span class="fu">summary</span>()</span>
 <span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="co">#&gt; Call:</span></span>
-<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="co">#&gt; glm(formula = f ~ X1, family = binomial, data = dat_logistic[dat_logistic$set == </span></span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="co">#&gt; glm(formula = f ~ X1, family = binomial, data = dat_logistic[dat_logistic$set_label == </span></span>
 <span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="co">#&gt;     &quot;unlabeled&quot;, ])</span></span>
 <span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a><span class="co">#&gt; Coefficients:</span></span>
@@ -782,12 +782,12 @@ using the provided wrapper function, <code>ipd()</code>:</p>
 <span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="fu">glm</span>(Y <span class="sc">~</span> X1, <span class="at">family =</span> binomial,</span>
 <span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>   </span>
-<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>  <span class="at">data =</span> dat_logistic[dat_logistic<span class="sc">$</span>set <span class="sc">==</span> <span class="st">&quot;labeled&quot;</span>,]) <span class="sc">|&gt;</span> </span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>  <span class="at">data =</span> dat_logistic[dat_logistic<span class="sc">$</span>set_label <span class="sc">==</span> <span class="st">&quot;labeled&quot;</span>,]) <span class="sc">|&gt;</span> </span>
 <span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>  </span>
 <span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a>  <span class="fu">summary</span>()</span>
 <span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a><span class="co">#&gt; Call:</span></span>
-<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="co">#&gt; glm(formula = Y ~ X1, family = binomial, data = dat_logistic[dat_logistic$set == </span></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a><span class="co">#&gt; glm(formula = Y ~ X1, family = binomial, data = dat_logistic[dat_logistic$set_label == </span></span>
 <span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="co">#&gt;     &quot;labeled&quot;, ])</span></span>
 <span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a><span class="co">#&gt; </span></span>
 <span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a><span class="co">#&gt; Coefficients:</span></span>
@@ -819,7 +819,7 @@ summaries using the provided wrapper function, <code>ipd()</code>:</p>
 <span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a></span>
 <span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a>ipd<span class="sc">::</span><span class="fu">ipd</span>(formula, <span class="at">method =</span> <span class="st">&quot;postpi_boot&quot;</span>, <span class="at">model =</span> <span class="st">&quot;logistic&quot;</span>, </span>
 <span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a>         </span>
-<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a>  <span class="at">data =</span> dat_logistic, <span class="at">label =</span> <span class="st">&quot;set&quot;</span>, <span class="at">nboot =</span> nboot) <span class="sc">|&gt;</span> </span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a>  <span class="at">data =</span> dat_logistic, <span class="at">label =</span> <span class="st">&quot;set_label&quot;</span>, <span class="at">nboot =</span> nboot) <span class="sc">|&gt;</span> </span>
 <span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a>  </span>
 <span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a>  <span class="fu">summary</span>()</span>
 <span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a><span class="co">#&gt; </span></span>
@@ -842,7 +842,7 @@ summaries using the provided wrapper function, <code>ipd()</code>:</p>
 <span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>ipd<span class="sc">::</span><span class="fu">ipd</span>(formula, <span class="at">method =</span> <span class="st">&quot;ppi&quot;</span>, <span class="at">model =</span> <span class="st">&quot;logistic&quot;</span>, </span>
 <span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>         </span>
-<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>  <span class="at">data =</span> dat_logistic, <span class="at">label =</span> <span class="st">&quot;set&quot;</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a>  <span class="at">data =</span> dat_logistic, <span class="at">label =</span> <span class="st">&quot;set_label&quot;</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a>  </span>
 <span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>  <span class="fu">summary</span>()</span>
 <span id="cb15-8"><a href="#cb15-8" tabindex="-1"></a><span class="co">#&gt; </span></span>
@@ -864,7 +864,7 @@ summaries using the provided wrapper function, <code>ipd()</code>:</p>
 <span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>ipd<span class="sc">::</span><span class="fu">ipd</span>(formula, <span class="at">method =</span> <span class="st">&quot;ppi_plusplus&quot;</span>, <span class="at">model =</span> <span class="st">&quot;logistic&quot;</span>, </span>
 <span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>         </span>
-<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>  <span class="at">data =</span> dat_logistic, <span class="at">label =</span> <span class="st">&quot;set&quot;</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>  <span class="at">data =</span> dat_logistic, <span class="at">label =</span> <span class="st">&quot;set_label&quot;</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>  </span>
 <span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>  <span class="fu">summary</span>()</span>
 <span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a><span class="co">#&gt; </span></span>
@@ -886,7 +886,7 @@ summaries using the provided wrapper function, <code>ipd()</code>:</p>
 <span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>ipd<span class="sc">::</span><span class="fu">ipd</span>(formula, <span class="at">method =</span> <span class="st">&quot;pspa&quot;</span>, <span class="at">model =</span> <span class="st">&quot;logistic&quot;</span>, </span>
 <span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>         </span>
-<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>  <span class="at">data =</span> dat_logistic, <span class="at">label =</span> <span class="st">&quot;set&quot;</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>  <span class="at">data =</span> dat_logistic, <span class="at">label =</span> <span class="st">&quot;set_label&quot;</span>) <span class="sc">|&gt;</span> </span>
 <span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>  </span>
 <span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>  <span class="fu">summary</span>()</span>
 <span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a><span class="co">#&gt; </span></span>
@@ -915,7 +915,7 @@ summaries using the provided wrapper function, <code>ipd()</code>:</p>
 <span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a></span>
 <span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>fit_postpi <span class="ot">&lt;-</span> ipd<span class="sc">::</span><span class="fu">ipd</span>(formula, </span>
 <span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a>         </span>
-<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">&quot;postpi_boot&quot;</span>, <span class="at">model =</span> <span class="st">&quot;ols&quot;</span>, <span class="at">data =</span> dat_ols, <span class="at">label =</span> <span class="st">&quot;set&quot;</span>, </span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">&quot;postpi_boot&quot;</span>, <span class="at">model =</span> <span class="st">&quot;ols&quot;</span>, <span class="at">data =</span> dat_ols, <span class="at">label =</span> <span class="st">&quot;set_label&quot;</span>, </span>
 <span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a>  </span>
 <span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a>  <span class="at">nboot =</span> nboot)</span></code></pre></div>
 <div id="print-method" class="section level3">
@@ -987,7 +987,7 @@ to the original dataset.</p>
 <span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>augmented_df <span class="ot">&lt;-</span> <span class="fu">augment</span>(fit_postpi)</span>
 <span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a></span>
 <span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a><span class="fu">head</span>(augmented_df)</span>
-<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a><span class="co">#&gt;          X1     X2    X3    X4    Y     f       set .fitted .resid</span></span>
+<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a><span class="co">#&gt;          X1     X2    X3    X4    Y     f set_label .fitted .resid</span></span>
 <span id="cb23-7"><a href="#cb23-7" tabindex="-1"></a><span class="co">#&gt; 10501  0.99 -3.280 -0.39  0.97  8.4  1.25 unlabeled    2.00    6.4</span></span>
 <span id="cb23-8"><a href="#cb23-8" tabindex="-1"></a><span class="co">#&gt; 10502 -0.66  0.142 -1.36 -0.22 -7.2 -1.08 unlabeled    0.10   -7.3</span></span>
 <span id="cb23-9"><a href="#cb23-9" tabindex="-1"></a><span class="co">#&gt; 10503  0.58 -1.368 -1.73  0.15  5.6 -0.31 unlabeled    1.53    4.1</span></span>

@@ -37,11 +37,11 @@ dat_ols <- simdat(n = n, effect = 1, sigma_Y = 4, model = "ols")
 
 options(digits=2)
 
-head(dat_ols[dat_ols$set == "training",])
+head(dat_ols[dat_ols$set_label == "training",])
 
-head(dat_ols[dat_ols$set == "labeled",])
+head(dat_ols[dat_ols$set_label == "labeled",])
 
-head(dat_ols[dat_ols$set == "unlabeled",])
+head(dat_ols[dat_ols$set_label == "unlabeled",])
 
 ## ----plot, echo = F, error = F, warning = F, message = F, comment = NA, fig.height=4, fig.width=7----
 
@@ -51,7 +51,7 @@ library(patchwork)
 
 #-- Plot example labeled data
 
-dat_labeled <- dat_ols[dat_ols$set == "labeled",]
+dat_labeled <- dat_ols[dat_ols$set_label == "labeled",]
 
 p1 <- dat_labeled |>
 
@@ -151,15 +151,15 @@ dat_logistic <- simdat(n = n, effect = 3, sigma_Y = 1,
 
 #-- Print First 6 Rows of Training, Labeled, and Unlabeled Subsets
 
-head(dat_logistic[dat_logistic$set == "training",])
+head(dat_logistic[dat_logistic$set_label == "training",])
 
-head(dat_logistic[dat_logistic$set == "labeled",])
+head(dat_logistic[dat_logistic$set_label == "labeled",])
 
-head(dat_logistic[dat_logistic$set == "unlabeled",])
+head(dat_logistic[dat_logistic$set_label == "unlabeled",])
 
 ## ----logsum, echo = F---------------------------------------------------------
 
-dat_logistic_labeled <- dat_logistic[dat_logistic$set == "labeled",]
+dat_logistic_labeled <- dat_logistic[dat_logistic$set_label == "labeled",]
 
 dat_logistic_labeled_summ <- dat_logistic_labeled |>
   
@@ -195,14 +195,14 @@ dat_logistic_labeled_summ |>
 ## ----naive--------------------------------------------------------------------
 #--- Fit the Naive Regression
 
-lm(f ~ X1, data = dat_ols[dat_ols$set == "unlabeled",]) |> 
+lm(f ~ X1, data = dat_ols[dat_ols$set_label == "unlabeled",]) |> 
   
   summary()
 
 ## ----classic------------------------------------------------------------------
 #--- Fit the Classic Regression
 
-lm(Y ~ X1, data = dat_ols[dat_ols$set == "labeled",]) |> 
+lm(Y ~ X1, data = dat_ols[dat_ols$set_label == "labeled",]) |> 
   
   summary()
 
@@ -217,7 +217,7 @@ nboot <- 200
 
 ipd::ipd(formula, 
          
-  method = "postpi_boot", model = "ols", data = dat_ols, label = "set", 
+  method = "postpi_boot", model = "ols", data = dat_ols, label = "set_label", 
   
   nboot = nboot) |> 
   
@@ -228,7 +228,7 @@ ipd::ipd(formula,
 
 ipd::ipd(formula, 
          
-  method = "postpi_analytic", model = "ols", data = dat_ols, label = "set") |> 
+  method = "postpi_analytic", model = "ols", data = dat_ols, label = "set_label") |> 
   
   summary()
 
@@ -237,7 +237,7 @@ ipd::ipd(formula,
 
 ipd::ipd(formula, 
          
-  method = "ppi", model = "ols", data = dat_ols, label = "set") |> 
+  method = "ppi", model = "ols", data = dat_ols, label = "set_label") |> 
   
   summary()
 
@@ -246,7 +246,7 @@ ipd::ipd(formula,
 
 ipd::ipd(formula, 
          
-  method = "ppi_plusplus", model = "ols", data = dat_ols, label = "set") |> 
+  method = "ppi_plusplus", model = "ols", data = dat_ols, label = "set_label") |> 
   
   summary()
 
@@ -255,7 +255,7 @@ ipd::ipd(formula,
 
 ipd::ipd(formula, 
          
-  method = "pspa", model = "ols", data = dat_ols, label = "set") |> 
+  method = "pspa", model = "ols", data = dat_ols, label = "set_label") |> 
   
   summary()
 
@@ -264,7 +264,7 @@ ipd::ipd(formula,
 
 glm(f ~ X1, family = binomial, 
     
-  data = dat_logistic[dat_logistic$set == "unlabeled",]) |> 
+  data = dat_logistic[dat_logistic$set_label == "unlabeled",]) |> 
   
   summary()
 
@@ -273,7 +273,7 @@ glm(f ~ X1, family = binomial,
 
 glm(Y ~ X1, family = binomial,
    
-  data = dat_logistic[dat_logistic$set == "labeled",]) |> 
+  data = dat_logistic[dat_logistic$set_label == "labeled",]) |> 
   
   summary()
 
@@ -288,7 +288,7 @@ nboot <- 200
 
 ipd::ipd(formula, method = "postpi_boot", model = "logistic", 
          
-  data = dat_logistic, label = "set", nboot = nboot) |> 
+  data = dat_logistic, label = "set_label", nboot = nboot) |> 
   
   summary()
 
@@ -297,7 +297,7 @@ ipd::ipd(formula, method = "postpi_boot", model = "logistic",
 
 ipd::ipd(formula, method = "ppi", model = "logistic", 
          
-  data = dat_logistic, label = "set") |> 
+  data = dat_logistic, label = "set_label") |> 
   
   summary()
 
@@ -306,7 +306,7 @@ ipd::ipd(formula, method = "ppi", model = "logistic",
 
 ipd::ipd(formula, method = "ppi_plusplus", model = "logistic", 
          
-  data = dat_logistic, label = "set") |> 
+  data = dat_logistic, label = "set_label") |> 
   
   summary()
 
@@ -315,7 +315,7 @@ ipd::ipd(formula, method = "ppi_plusplus", model = "logistic",
 
 ipd::ipd(formula, method = "pspa", model = "logistic", 
          
-  data = dat_logistic, label = "set") |> 
+  data = dat_logistic, label = "set_label") |> 
   
   summary()
 
@@ -326,7 +326,7 @@ nboot <- 200
 
 fit_postpi <- ipd::ipd(formula, 
          
-  method = "postpi_boot", model = "ols", data = dat_ols, label = "set", 
+  method = "postpi_boot", model = "ols", data = dat_ols, label = "set_label", 
   
   nboot = nboot)
 
