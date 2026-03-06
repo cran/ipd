@@ -39,7 +39,7 @@ Helper function for prediction-powered inference for OLS estimation
 }
 \details{
 Prediction Powered Inference (Angelopoulos et al., 2023)
-\url{https://www.science.org/doi/10.1126/science.adi6000}
+\doi{10.1126/science.adi6000}
 }
 \examples{
 
@@ -47,15 +47,21 @@ dat <- simdat()
 
 form <- Y - f ~ X1
 
-X_l <- model.matrix(form, data = dat[dat$set_label == "labeled",])
+X_l <- model.matrix(form, data = dat[dat$set_label == "labeled", ])
 
-Y_l <- dat[dat$set_label == "labeled", all.vars(form)[1]] |> matrix(ncol = 1)
+Y_l <- dat[dat$set_label == "labeled", all.vars(form)[1]] |>
 
-f_l <- dat[dat$set_label == "labeled", all.vars(form)[2]] |> matrix(ncol = 1)
+  matrix(ncol = 1)
 
-X_u <- model.matrix(form, data = dat[dat$set_label == "unlabeled",])
+f_l <- dat[dat$set_label == "labeled", all.vars(form)[2]] |>
 
-f_u <- dat[dat$set_label == "unlabeled", all.vars(form)[2]] |> matrix(ncol = 1)
+  matrix(ncol = 1)
+
+X_u <- model.matrix(form, data = dat[dat$set_label == "unlabeled", ])
+
+f_u <- dat[dat$set_label == "unlabeled", all.vars(form)[2]] |>
+
+  matrix(ncol = 1)
 
 ppi_ols(X_l, Y_l, f_l, X_u, f_u)
 

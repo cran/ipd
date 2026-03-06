@@ -16,20 +16,26 @@
 #' package integrates methods designed to address these challenges.
 #'
 #' @section Features:
-#' - Multiple IPD methods: `PostPI`, `PPI`, `PPI++`, and `PSPA` currently.
+#' - Multiple IPD methods: `Chen and Chen`, `PDC`, `PostPI`, `PPI`, `PPI++`, and `PSPA` currently.
 #' - Flexible wrapper functions for ease of use.
 #' - Custom methods for model inspection and evaluation.
 #' - Seamless integration with common data structures in R.
 #' - Comprehensive documentation and examples.
 #'
 #' @section Key Functions:
-#' - \code{\link{ipd}}: Main wrapper function which implements various methods for inference on predicted data for a specified model/outcome type (e.g., mean estimation, linear regression).
-#' - \code{\link{simdat}}: Simulates data for demonstrating the use of the various IPD methods.
-#' - \code{\link{print.ipd}}: Prints a brief summary of the IPD method/model combination.
+#' - \code{\link{ipd}}: Main wrapper function which implements various methods
+#'   for inference on predicted data for a specified model/outcome type
+#'   (e.g., mean estimation, linear regression).
+#' - \code{\link{simdat}}: Simulates data for demonstrating the use of the
+#'   various IPD methods.
+#' - \code{\link{print.ipd}}: Prints a brief summary of the IPD method/model
+#'   combination.
 #' - \code{\link{summary.ipd}}: Summarizes the results of fitted IPD models.
 #' - \code{\link{tidy.ipd}}: Tidies the IPD method/model fit into a data frame.
-#' - \code{\link{glance.ipd}}: Glances at the IPD method/model fit, returning a one-row summary.
-#' - \code{\link{augment.ipd}}: Augments the data used for an IPD method/model fit with additional information about each observation.
+#' - \code{\link{glance.ipd}}: Glances at the IPD method/model fit, returning a
+#'   one-row summary.
+#' - \code{\link{augment.ipd}}: Augments the data used for an IPD method/model
+#'   fit with additional information about each observation.
 #'
 #' @section Documentation:
 #' The package includes detailed documentation for each function, including
@@ -38,15 +44,13 @@
 #'
 #' @section References:
 #' For details on the statistical methods implemented in this package, please
-#' refer to the associated manuscripts at the following references:
-#' - \strong{PostPI}: Wang, S., McCormick, T. H., & Leek, J. T. (2020). Methods for correcting inference based on outcomes predicted by machine learning. Proceedings of the National Academy of Sciences, 117(48), 30266-30275.
-#' - \strong{PPI}: Angelopoulos, A. N., Bates, S., Fannjiang, C., Jordan, M. I., & Zrnic, T. (2023). Prediction-powered inference. Science, 382(6671), 669-674.
-#' - \strong{PPI++}: Angelopoulos, A. N., Duchi, J. C., & Zrnic, T. (2023). PPI++: Efficient prediction-powered inference. arXiv preprint arXiv:2311.01453.
-#' - \strong{PSPA}: Miao, J., Miao, X., Wu, Y., Zhao, J., & Lu, Q. (2023). Assumption-lean and data-adaptive post-prediction inference. arXiv preprint arXiv:2311.14220.
+#' refer to the vignette.
 #'
 #' @name ipd-package
 #'
 #' @keywords package
+#'
+#' @importFrom BiocGenerics combine
 #'
 #' @examples
 #' #-- Generate Example Data
@@ -61,35 +65,54 @@
 #'
 #' #-- PostPI Analytic Correction (Wang et al., 2020)
 #'
-#' fit_postpi1 <- ipd(formula, method = "postpi_analytic", model = "ols",
-#'
-#'     data = dat, label = "set_label")
+#' fit_postpi1 <- ipd(formula,
+#'   method = "postpi_analytic", model = "ols",
+#'   data = dat, label = "set_label"
+#' )
 #'
 #' #-- PostPI Bootstrap Correction (Wang et al., 2020)
 #'
 #' nboot <- 200
 #'
-#' fit_postpi2 <- ipd(formula, method = "postpi_boot", model = "ols",
-#'
-#'     data = dat, label = "set_label", nboot = nboot)
+#' fit_postpi2 <- ipd(formula,
+#'   method = "postpi_boot", model = "ols",
+#'   data = dat, label = "set_label", nboot = nboot
+#' )
 #'
 #' #-- PPI (Angelopoulos et al., 2023)
 #'
-#' fit_ppi <- ipd(formula, method = "ppi", model = "ols",
-#'
-#'     data = dat, label = "set_label")
+#' fit_ppi <- ipd(formula,
+#'   method = "ppi", model = "ols",
+#'   data = dat, label = "set_label"
+#' )
 #'
 #' #-- PPI++ (Angelopoulos et al., 2023)
 #'
-#' fit_plusplus <- ipd(formula, method = "ppi_plusplus", model = "ols",
-#'
-#'     data = dat, label = "set_label")
+#' fit_plusplus <- ipd(formula,
+#'   method = "ppi_plusplus", model = "ols",
+#'   data = dat, label = "set_label"
+#' )
 #'
 #' #-- PSPA (Miao et al., 2023)
 #'
-#' fit_pspa <- ipd(formula, method = "pspa", model = "ols",
+#' fit_pspa <- ipd(formula,
+#'   method = "pspa", model = "ols",
+#'   data = dat, label = "set_label"
+#' )
 #'
-#'     data = dat, label = "set_label")
+#' #-- Chen and Chen (Gronsbell et al., 2026)
+#'
+#' fit_chen <- ipd(formula,
+#'   method = "chen", model = "ols",
+#'   data = dat, label = "set_label"
+#' )
+#'
+#' #-- Prediction Decorrelated Inference (Gan et al., 2024)
+#'
+#' fit_chen <- ipd(formula,
+#'   method = "pdc", model = "ols",
+#'   data = dat, label = "set_label"
+#' )
 #'
 #' #-- Print the Model
 #'

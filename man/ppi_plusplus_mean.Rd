@@ -30,7 +30,7 @@ ppi_plusplus_mean(
 \code{"two-sided"}, \code{"less"}, or \code{"greater"}.}
 
 \item{lhat}{(float, optional): Power-tuning parameter (see
-\url{https://arxiv.org/abs/2311.01453}). The default value, \code{NULL},
+\doi{10.48550/arXiv.2311.01453}). The default value, \code{NULL},
 will estimate the optimal value from the data. Setting \code{lhat = 1}
 recovers PPI with no power tuning, and setting \code{lhat = 0} recovers
 the classical point estimate.}
@@ -54,7 +54,7 @@ Helper function for PPI++ mean estimation
 }
 \details{
 PPI++: Efficient Prediction Powered Inference (Angelopoulos et al., 2023)
-\url{https://arxiv.org/abs/2311.01453}`
+\doi{10.48550/arXiv.2311.01453}
 }
 \examples{
 
@@ -62,11 +62,17 @@ dat <- simdat(model = "mean")
 
 form <- Y - f ~ 1
 
-Y_l <- dat[dat$set_label == "labeled",   all.vars(form)[1]] |> matrix(ncol = 1)
+Y_l <- dat[dat$set_label == "labeled", all.vars(form)[1]] |>
 
-f_l <- dat[dat$set_label == "labeled",   all.vars(form)[2]] |> matrix(ncol = 1)
+  matrix(ncol = 1)
 
-f_u <- dat[dat$set_label == "unlabeled", all.vars(form)[2]] |> matrix(ncol = 1)
+f_l <- dat[dat$set_label == "labeled", all.vars(form)[2]] |>
+
+  matrix(ncol = 1)
+
+f_u <- dat[dat$set_label == "unlabeled", all.vars(form)[2]] |>
+
+  matrix(ncol = 1)
 
 ppi_plusplus_mean(Y_l, f_l, f_u)
 

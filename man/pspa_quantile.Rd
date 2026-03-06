@@ -30,7 +30,7 @@ Helper function for PSPA quantile estimation
 }
 \details{
 Post-prediction adaptive inference
-(Miao et al. 2023) \url{https://arxiv.org/abs/2311.14220}
+(Miao et al., 2023) \doi{10.48550/arXiv.2311.14220}
 }
 \examples{
 
@@ -38,12 +38,13 @@ dat <- simdat(model = "quantile")
 
 form <- Y - f ~ 1
 
-Y_l <- dat[dat$set_label == "labeled",   all.vars(form)[1]] |> matrix(ncol = 1)
+Y_l <- dat[dat$set_label == "labeled", all.vars(form)[1]] |> matrix(ncol = 1)
 
-f_l <- dat[dat$set_label == "labeled",   all.vars(form)[2]] |> matrix(ncol = 1)
+f_l <- dat[dat$set_label == "labeled", all.vars(form)[2]] |> matrix(ncol = 1)
 
-f_u <- dat[dat$set_label == "unlabeled", all.vars(form)[2]] |> matrix(ncol = 1)
+f_u <- dat[dat$set_label == "unlabeled", all.vars(form)[2]] |>
+  matrix(ncol = 1)
 
-pspa_quantile(Y_l, f_l, f_u, q = 0.5)
+pspa_quantile(Y_l = Y_l, f_l = f_l, f_u = f_u, q = 0.5)
 
 }

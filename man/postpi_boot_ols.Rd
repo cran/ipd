@@ -14,8 +14,7 @@ postpi_boot_ols(
   se_type = "par",
   rel_func = "lm",
   scale_se = TRUE,
-  n_t = Inf,
-  seed = NULL
+  n_t = Inf
 )
 }
 \arguments{
@@ -45,8 +44,6 @@ error variance. Defaults to TRUE; FALSE option is retained for posterity.}
 \item{n_t}{(integer, optional) Size of the dataset used to train the
 prediction function (necessary if \code{n_t} < \code{nrow(X_l)}.
 Defaults to \code{Inf}.}
-
-\item{seed}{(optional) An \code{integer} seed for random number generation.}
 }
 \value{
 A list of outputs: estimate of inference model parameters and
@@ -58,8 +55,7 @@ Helper function for PostPI OLS estimation (bootstrap correction)
 }
 \details{
 Methods for correcting inference based on outcomes predicted by machine
-learning (Wang et al., 2020)
-\url{https://www.pnas.org/doi/abs/10.1073/pnas.2001238117}
+learning (Wang et al., 2020) \doi{10.1073/pnas.2001238117}
 }
 \examples{
 
@@ -67,15 +63,21 @@ dat <- simdat(model = "ols")
 
 form <- Y - f ~ X1
 
-X_l <- model.matrix(form, data = dat[dat$set_label == "labeled",])
+X_l <- model.matrix(form, data = dat[dat$set_label == "labeled", ])
 
-Y_l <- dat[dat$set_label == "labeled", all.vars(form)[1]] |> matrix(ncol = 1)
+Y_l <- dat[dat$set_label == "labeled", all.vars(form)[1]] |>
 
-f_l <- dat[dat$set_label == "labeled", all.vars(form)[2]] |> matrix(ncol = 1)
+  matrix(ncol = 1)
 
-X_u <- model.matrix(form, data = dat[dat$set_label == "unlabeled",])
+f_l <- dat[dat$set_label == "labeled", all.vars(form)[2]] |>
 
-f_u <- dat[dat$set_label == "unlabeled", all.vars(form)[2]] |> matrix(ncol = 1)
+  matrix(ncol = 1)
+
+X_u <- model.matrix(form, data = dat[dat$set_label == "unlabeled", ])
+
+f_u <- dat[dat$set_label == "unlabeled", all.vars(form)[2]] |>
+
+  matrix(ncol = 1)
 
 postpi_boot_ols(X_l, Y_l, f_l, X_u, f_u, nboot = 200)
 

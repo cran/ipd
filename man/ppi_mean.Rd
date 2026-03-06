@@ -28,7 +28,7 @@ Helper function for PPI mean estimation
 }
 \details{
 Prediction Powered Inference (Angelopoulos et al., 2023)
-\url{https://www.science.org/doi/10.1126/science.adi6000}
+\doi{10.1126/science.adi6000}
 }
 \examples{
 
@@ -36,11 +36,14 @@ dat <- simdat(model = "mean")
 
 form <- Y - f ~ 1
 
-Y_l <- dat[dat$set_label == "labeled",   all.vars(form)[1]] |> matrix(ncol = 1)
+Y_l <- dat[dat$set_label == "labeled", all.vars(form)[1]] |>
+  matrix(ncol = 1)
 
-f_l <- dat[dat$set_label == "labeled",   all.vars(form)[2]] |> matrix(ncol = 1)
+f_l <- dat[dat$set_label == "labeled", all.vars(form)[2]] |>
+  matrix(ncol = 1)
 
-f_u <- dat[dat$set_label == "unlabeled", all.vars(form)[2]] |> matrix(ncol = 1)
+f_u <- dat[dat$set_label == "unlabeled", all.vars(form)[2]] |>
+  matrix(ncol = 1)
 
 ppi_mean(Y_l, f_l, f_u)
 

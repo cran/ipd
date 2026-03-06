@@ -1,0 +1,11 @@
+bibentry(
+  bibtype = "Article",
+  title = "ipd: An R Package for Conducting Inference on Predicted Data",
+  author = "Salerno, Stephen and Miao, Jiacheng and Afiaz, Awan and Hoffman, Kentaro and Neufeld, Anna and Lu, Qiongshi and McCormick, Tyler H and Leek, Jeffrey T",
+  journal = "Bioinformatics",
+  year = "2025",
+  volume = "41",
+  number = "2",
+  pages = "btaf055",
+  doi = "10.1093/bioinformatics/btaf055"
+)

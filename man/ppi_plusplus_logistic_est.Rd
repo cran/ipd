@@ -29,7 +29,7 @@ ppi_plusplus_logistic_est(
 \item{f_u}{(vector): N-vector of predictions in the unlabeled data.}
 
 \item{lhat}{(float, optional): Power-tuning parameter (see
-\url{https://arxiv.org/abs/2311.01453}). The default value, \code{NULL},
+\doi{10.48550/arXiv.2311.01453}). The default value, \code{NULL},
 will estimate the optimal value from the data. Setting \code{lhat = 1}
 recovers PPI with no power tuning, and setting \code{lhat = 0} recovers
 the classical point estimate.}
@@ -56,7 +56,7 @@ Helper function for PPI++ logistic regression (point estimate)
 }
 \details{
 PPI++: Efficient Prediction Powered Inference (Angelopoulos et al., 2023)
-\url{https://arxiv.org/abs/2311.01453}`
+\doi{10.48550/arXiv.2311.01453}
 }
 \examples{
 
@@ -64,15 +64,21 @@ dat <- simdat(model = "logistic")
 
 form <- Y - f ~ X1
 
-X_l <- model.matrix(form, data = dat[dat$set_label == "labeled",])
+X_l <- model.matrix(form, data = dat[dat$set_label == "labeled", ])
 
-Y_l <- dat[dat$set_label == "labeled", all.vars(form)[1]] |> matrix(ncol = 1)
+Y_l <- dat[dat$set_label == "labeled", all.vars(form)[1]] |>
 
-f_l <- dat[dat$set_label == "labeled", all.vars(form)[2]] |> matrix(ncol = 1)
+  matrix(ncol = 1)
 
-X_u <- model.matrix(form, data = dat[dat$set_label == "unlabeled",])
+f_l <- dat[dat$set_label == "labeled", all.vars(form)[2]] |>
 
-f_u <- dat[dat$set_label == "unlabeled", all.vars(form)[2]] |> matrix(ncol = 1)
+  matrix(ncol = 1)
+
+X_u <- model.matrix(form, data = dat[dat$set_label == "unlabeled", ])
+
+f_u <- dat[dat$set_label == "unlabeled", all.vars(form)[2]] |>
+
+  matrix(ncol = 1)
 
 ppi_plusplus_logistic_est(X_l, Y_l, f_l, X_u, f_u)
 
