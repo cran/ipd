@@ -1,6 +1,6 @@
 Package: ipd
 Title: Inference on Predicted Data
-Version: 0.4.0
+Version: 0.4.1
 Authors@R: c(
       person(given = "Stephen", family = "Salerno",
         email = "ssalerno@fredhutch.org", role = c("aut", "cre", "cph"),
@@ -30,8 +30,8 @@ License: MIT + file LICENSE
 URL: https://github.com/ipd-tools/ipd, https://ipd-tools.github.io/ipd/
 BugReports: https://github.com/ipd-tools/ipd/issues
 Depends: R (>= 4.4.0)
-Imports: methods, generics, BiocGenerics, caret, gam, ranger, splines,
-        stats, MASS, randomForest, tibble
+Imports: methods, generics, caret, gam, ranger, splines, stats, MASS,
+        randomForest, tibble
 Suggests: knitr, patchwork, rmarkdown, spelling, testthat (>= 3.0.0),
         tidyverse, xfun (>= 0.51), BiocStyle, BiocManager
 VignetteBuilder: knitr
@@ -41,7 +41,7 @@ Encoding: UTF-8
 RoxygenNote: 7.3.3
 Language: en-US
 NeedsCompilation: no
-Packaged: 2026-03-06 14:28:36 UTC; ssalerno
+Packaged: 2026-03-11 03:23:19 UTC; ssalerno
 Author: Stephen Salerno [aut, cre, cph] (ORCID:
     <https://orcid.org/0000-0003-2763-0494>),
   Jiacheng Miao [aut],
@@ -56,4 +56,4 @@ Author: Stephen Salerno [aut, cre, cph] (ORCID:
   Jeffrey T Leek [aut]
 Maintainer: Stephen Salerno <ssalerno@fredhutch.org>
 Repository: CRAN
-Date/Publication: 2026-03-06 14:50:07 UTC
+Date/Publication: 2026-03-11 15:00:09 UTC

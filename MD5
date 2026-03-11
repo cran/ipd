@@ -1,11 +1,11 @@
-267ff8de0ae342bdc04c21643d0fd830 *DESCRIPTION
+568b622fb779cf5d99949b3889707d12 *DESCRIPTION
 d717846f7df44a48ba9166d0c2741fa1 *LICENSE
-53034ea8549aafc4187cdeb3bfdae90a *NAMESPACE
-d74565a7ca549d90b653f1096f01791a *NEWS.md
+374821d9ed58e1550544be174c13448f *NAMESPACE
+ce90daea8a333e77ed01f7e01105da3c *NEWS.md
 6f20b40583e3279adc4558899d22d293 *R/chen_logistic.R
 e90e96a4bf4251975faf928d8f51640d *R/chen_ols.R
 37f4d8d44ff1d6632814834c48d2b1a9 *R/chen_poisson.R
-8586cb2477bf2e3fc1184db33e8b924c *R/ipd-package.R
+4d6a478ffad08e4f93c746c11964462d *R/ipd-package.R
 f235432f6c0725a8fe5a7289650cf0f2 *R/ipd.R
 78f90574a172248e8d1f5dd668ddd1d5 *R/methods.R
 7d09c3a2eb6371fa5746d2c3f99faa96 *R/pdc_logistic.R
@@ -33,7 +33,7 @@ e66cb371d589d6bb30a3e083f6ec138d *R/pspa_mean.R
 a3b316f47a97d1f9e5cf985e27044db5 *R/utils_ipd.R
 6dd6edab48b4743d9383550ed55cedb0 *R/utils_ppi.R
 9adda1f7267bfbbf3e07c0a4b6291170 *R/utils_pspa.R
-6b8056e16e04b79c3a930316109e502a *README.md
+f54e943c4c09e63440c06a2aca18553d *README.md
 d54042561b90aafd8a9a202ea63e1e4b *build/partial.rdb
 a20c8759264228d33866c55c19b5fc6f *build/vignette.rds
 b877ec8777ac690ceb4f75ef7519d4f2 *inst/CITATION
@@ -42,7 +42,7 @@ b877ec8777ac690ceb4f75ef7519d4f2 *inst/CITATION
 583ee929ee3c55864f1a59ad43f41349 *inst/WORDLIST
 75579fd8cd0d4280bcf6be9cacf95586 *inst/doc/ipd.R
 abd0e33ae05ae358a33d68ecbf172778 *inst/doc/ipd.Rmd
-39011d6a3f236905e637e16c06aec46f *inst/doc/ipd.html
+9d7fcfb5dcaa03ace40a7290ececcfbb *inst/doc/ipd.html
 84e079edafedbf074123bd876056b6c3 *inst/fig.png
 664cd83e66bffe3da3ab469bb00fffa2 *inst/paper.R
 ed0ec0d516d594325a89c576c7ab17f3 *inst/paper_results.RData
